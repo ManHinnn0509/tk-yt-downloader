@@ -3,8 +3,7 @@ from tkinter import *
 from pytube import YouTube
 
 from config import *
-from widgets.info_frame import InfoFrame
-from widgets.input_frame import InputFrame
+from widgets import *
 
 class YTDL_Window:
 
@@ -28,6 +27,11 @@ class YTDL_Window:
         self.inputFrame = InputFrame(self, "Video URL: ")
         self.infoFrame = InfoFrame(self, self.VIDEO_INFO_KEYS)
 
+        # Listbox(es) for streams
+        self.videoWithAudioListbox = StreamList(self, [], "Video with audio", "Download", "left")
+        self.onlyVideoListbox = StreamList(self, [], "Video only", "Download", "left")
+        self.onlyAudioListbox = StreamList(self, [], "Audio only", "Download", "left")
+
     def exec(self, video, streams):
         
         # Returns string, which means the video cannot be downloaded now
@@ -35,7 +39,23 @@ class YTDL_Window:
             print(video)
             return
 
+        # Update the video's info
         self.infoFrame.update(video)
+
+        # Update stream lists
+        onlyAudio = streams.filter(only_audio=True)
+        onlyVideo = streams.filter(only_video=True)
+        videoWithAudio = (set(streams) - set(onlyVideo)) - set(onlyAudio)
+
+        videoWithAudio = list(videoWithAudio)
+        onlyAudio = list(onlyAudio)
+        onlyVideo = list(onlyVideo)
+
+        self.videoWithAudioListbox.update(videoWithAudio)
+        self.onlyVideoListbox.update(onlyVideo)
+        self.onlyAudioListbox.update(onlyAudio)
+        
+
 
     def start(self):
         self.master.mainloop()

@@ -2,7 +2,7 @@ import tkinter as tk
 
 from util.utils import formatTime
 from util.utils import genLabelText
-from util.img_utils import readImgFromPath
+from util.img_utils import getImgFromURL, readImgFromPath
 from config import THUMBNAIL_PIXELS_X, THUMBNAIL_PIXELS_Y
 
 # Video info
@@ -44,6 +44,10 @@ class InfoFrame:
         self.infoFrame.pack()
 
     def update(self, video):
+        
+        # Update thumbnail
+        self.thumbnail = getImgFromURL(video.thumbnail_url, THUMBNAIL_PIXELS_X, THUMBNAIL_PIXELS_Y)
+
         # Format the info
         infoValues = [
             video.title,
@@ -56,6 +60,7 @@ class InfoFrame:
 
         # Update the label
         self.infoMsg.configure(
+            image=self.thumbnail,
             text=genLabelText(
                 [f"{k} : {v}" for k, v in d.items()], " "
             )
