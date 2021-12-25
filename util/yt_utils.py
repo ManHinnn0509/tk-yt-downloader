@@ -154,7 +154,7 @@ def getVideo(url) -> Union[YouTube, str]:
         return "Please check your connection, or updating pytube via 'pip install -U pytube'", streams
     
     except VideoUnavailable:
-        f"Unable to get info of video: {url}", streams
+        return f"Unable to get info of video: {url}", streams
     
     except AttributeError:
         return "Unable to get streams. This might be issue of Pytube.", streams

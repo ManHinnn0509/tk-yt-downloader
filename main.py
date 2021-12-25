@@ -28,10 +28,13 @@ class YTDL_Window:
         self.infoFrame = InfoFrame(self, self.VIDEO_INFO_KEYS)
 
     def exec(self, video, streams):
-
+        
+        # Returns string, which means the video cannot be downloaded now
         if (type(video) == str):
+            print(video)
             return
 
+        self.infoFrame.update(video)
 
     def start(self):
         self.master.mainloop()

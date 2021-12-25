@@ -1,5 +1,6 @@
 import tkinter as tk
 
+from util.utils import formatTime
 from util.utils import genLabelText
 from util.img_utils import readImgFromPath
 from config import THUMBNAIL_PIXELS_X, THUMBNAIL_PIXELS_Y
@@ -41,6 +42,21 @@ class InfoFrame:
         # Grid, pack etc.
         self.infoMsg.grid(row=1, column=0)
         self.infoFrame.pack()
-    
-    def update(self, video, streams):
-        pass
+
+    def update(self, video):
+        # Format the info
+        infoValues = [
+            video.title,
+            formatTime(video.length),
+            video.author,
+            str(video.publish_date).split(" ")[0]
+        ]
+
+        d = dict(zip(self.infoKeys, infoValues))
+
+        # Update the label
+        self.infoMsg.configure(
+            text=genLabelText(
+                [f"{k} : {v}" for k, v in d.items()], " "
+            )
+        )

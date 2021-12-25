@@ -40,4 +40,4 @@ class InputFrame:
 
         v, streams = getVideo(s)
         
-        self.mainWindow.exec(s, streams)
+        self.mainWindow.exec(v, streams)
