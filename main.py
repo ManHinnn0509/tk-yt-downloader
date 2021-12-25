@@ -54,8 +54,6 @@ class YTDL_Window:
         self.videoWithAudioListbox.update(videoWithAudio)
         self.onlyVideoListbox.update(onlyVideo)
         self.onlyAudioListbox.update(onlyAudio)
-        
-
 
     def start(self):
         self.master.mainloop()

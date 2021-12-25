@@ -45,3 +45,5 @@ Also, [FFmpeg](https://github.com/FFmpeg/FFmpeg) is needed if for merging video 
     * [ ] Audio
 
 * [ ] Merge button (Merge video & audio)
+
+* [ ] Optional output path
