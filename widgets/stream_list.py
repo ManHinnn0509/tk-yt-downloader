@@ -117,7 +117,7 @@ class StreamList:
             
             # Add itag into it, this is very important
             # s += f" ({stream.itag})"
-            s += f"({stream.mime_type})"
+            s += f" ({stream.mime_type})"
 
             l.append(s)
         
