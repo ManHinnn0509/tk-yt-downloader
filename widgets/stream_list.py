@@ -28,7 +28,7 @@ class StreamList:
         listbox = tk.Listbox(
             listboxFrame,
             listvariable=tk.StringVar(value=self.formattedStreams),
-            width=25
+            width=28
             # fg?
         )
         self.listbox = listbox
@@ -53,10 +53,13 @@ class StreamList:
 
         # --- Packing etc.
         
+        # Order matters, don't change it
         self.listName.pack()
         self.listbox.pack(fill=tk.Y, expand=True)
         self.button.pack()
-        self.listboxFrame.pack(fill=tk.Y, side=self.side)
+
+        self.listboxFrame.pack(fill=tk.Y, side=self.side, expand=True)
+        # self.listboxFrame.pack(fill=tk.Y, side=self.side, expand=True)
     
     def downloadSelection(self):
         def startDownload():

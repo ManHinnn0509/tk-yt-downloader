@@ -1,5 +1,5 @@
 # Window's title
-TITLE = "Tkinter YouTube Downloader by ManHinnn0509"
+TITLE = "YouTube Downloader in Tkinter by ManHinnn0509"
 
 # Window Size, WxH
 WINDOW_SIZE = "700x400"

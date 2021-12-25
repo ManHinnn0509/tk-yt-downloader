@@ -1,6 +1,6 @@
-REM For quick restart
-
 @echo off
+
+REM For quick restart
 
 :start
 python main.py
