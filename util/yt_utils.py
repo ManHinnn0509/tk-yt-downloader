@@ -129,7 +129,6 @@ def downloadLogging(stream, chunk, bytes_remaining):
     percentage = (bytes_downloaded / total_size) * 100
 
     s = f"Downloading ... {percentage:.1f}%"
-    # print(colorizeString(s, CBP2077_PINK))
     print(s)
 
 def getVideo(url) -> Union[YouTube, str]:

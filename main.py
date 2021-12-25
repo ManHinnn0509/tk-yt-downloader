@@ -24,6 +24,7 @@ class YTDL_Window:
         master.geometry(WINDOW_SIZE)
         master.resizable(RESIZE_W, RESIZE_H)
 
+        # Widgets
         self.inputFrame = InputFrame(self, "Video URL: ")
         self.infoFrame = InfoFrame(self, self.VIDEO_INFO_KEYS)
 
