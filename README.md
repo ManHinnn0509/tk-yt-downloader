@@ -43,7 +43,8 @@ Also, [FFmpeg](https://github.com/FFmpeg/FFmpeg) is needed if for merging video 
 * [ ] Best quality stream download button
     * [ ] Video
     * [ ] Audio
-
 * [ ] Merge button (Merge video & audio)
-
 * [ ] Optional output path
+* [ ] Maximum title display length
+* [ ] Sort streams by it's quality
+* [ ] Create `.exe` builds

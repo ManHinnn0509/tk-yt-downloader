@@ -3,6 +3,7 @@ from tkinter import *
 from pytube import YouTube
 
 from config import *
+from util.yt_utils import sortStreamsByQuality
 from widgets import *
 
 class YTDL_Window:
@@ -47,8 +48,9 @@ class YTDL_Window:
         onlyVideo = streams.filter(only_video=True)
         videoWithAudio = (set(streams) - set(onlyVideo)) - set(onlyAudio)
 
-        videoWithAudio = list(videoWithAudio)
-        onlyAudio = list(onlyAudio)
+        videoWithAudio = sortStreamsByQuality(list(videoWithAudio))
+        onlyAudio = sortStreamsByQuality(list(onlyAudio))
+        # This doesn't need to sort somehow
         onlyVideo = list(onlyVideo)
 
         self.videoWithAudioListbox.update(videoWithAudio)

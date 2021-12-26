@@ -165,3 +165,21 @@ def getVideo(url) -> Union[YouTube, str]:
 
     else:
         return v, streams
+
+def sortStreamsByQuality(streams: list, highestToLowest=True):
+    d = {}
+    for s in streams:
+        quality = s.resolution if (s.resolution != None) else s.abr
+        quality = __intExtract(quality)
+        
+        # k = f"{quality}_{s.itag}"
+        k = quality
+        d[k] = s
+    
+    result = dict(sorted(d.items())).values()
+    result = list(result)
+
+    if (highestToLowest):
+        result = list(reversed(result))
+    
+    return result

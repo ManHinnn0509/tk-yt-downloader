@@ -3,7 +3,7 @@ import tkinter as tk
 from util.utils import formatTime
 from util.utils import genLabelText
 from util.img_utils import getImgFromURL, readImgFromPath
-from config import THUMBNAIL_PIXELS_X, THUMBNAIL_PIXELS_Y
+from config import THUMBNAIL_PIXELS_X, THUMBNAIL_PIXELS_Y, TITLE_DISPLAY_MAX_LEN
 
 # Video info
 
@@ -48,9 +48,13 @@ class InfoFrame:
         # Update thumbnail
         self.thumbnail = getImgFromURL(video.thumbnail_url, THUMBNAIL_PIXELS_X, THUMBNAIL_PIXELS_Y)
 
+        title = video.title
+        if (len(title) > TITLE_DISPLAY_MAX_LEN):
+            title = title[:TITLE_DISPLAY_MAX_LEN] + " " + "..."
+
         # Format the info
         infoValues = [
-            video.title,
+            title,
             formatTime(video.length),
             video.author,
             str(video.publish_date).split(" ")[0]

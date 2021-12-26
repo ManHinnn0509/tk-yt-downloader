@@ -14,3 +14,5 @@ DEFAULT_URL = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 # --- Info frame
 THUMBNAIL_PIXELS_X = 107
 THUMBNAIL_PIXELS_Y = 80
+
+TITLE_DISPLAY_MAX_LEN = 50
