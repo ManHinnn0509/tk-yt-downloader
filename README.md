@@ -45,6 +45,6 @@ Also, [FFmpeg](https://github.com/FFmpeg/FFmpeg) is needed if for merging video 
     * [ ] Audio
 * [ ] Merge button (Merge video & audio)
 * [ ] Optional output path
-* [ ] Maximum title display length
-* [ ] Sort streams by it's quality
 * [ ] Create `.exe` builds
+* [x] [Maximum title display length](https://github.com/ManHinnn0509/tk-yt-downloader/commit/b9ca71bd3ba68379bfba92f49a93a23b6f8b6605)
+* [x] [Sort streams by it's quality (Highest to lowest)](https://github.com/ManHinnn0509/tk-yt-downloader/commit/b9ca71bd3ba68379bfba92f49a93a23b6f8b6605)
