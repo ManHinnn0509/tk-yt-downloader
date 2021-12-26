@@ -5,7 +5,7 @@ import tkinter as tk
 from config import OUTPUT_PATH
 
 class StreamList:
-    def __init__(self, mainWindow, streams, listNameText, buttonText, side) -> None:
+    def __init__(self, mainWindow, streams, listNameText, buttonText="Download", side="left") -> None:
         self.mainWindow = mainWindow
         self.master = mainWindow.master
 

@@ -1,10 +1,10 @@
 import tkinter as tk
 from tkinter import *
-from pytube import YouTube
 
 from config import *
-from util.yt_utils import sortStreamsByQuality
 from widgets import *
+
+from util.yt_utils import sortStreamsByQuality
 
 class YTDL_Window:
 
@@ -29,9 +29,9 @@ class YTDL_Window:
         self.infoFrame = InfoFrame(self, self.VIDEO_INFO_KEYS)
 
         # Listbox(es) for streams
-        self.videoWithAudioListbox = StreamList(self, [], "Video with audio", "Download", "left")
-        self.onlyVideoListbox = StreamList(self, [], "Video only", "Download", "left")
-        self.onlyAudioListbox = StreamList(self, [], "Audio only", "Download", "left")
+        self.videoWithAudioListbox = StreamList(self, [], "Video with audio")
+        self.onlyVideoListbox = StreamList(self, [], "Video only")
+        self.onlyAudioListbox = StreamList(self, [], "Audio only")
 
     def exec(self, video, streams):
         
@@ -50,8 +50,7 @@ class YTDL_Window:
 
         videoWithAudio = sortStreamsByQuality(list(videoWithAudio))
         onlyAudio = sortStreamsByQuality(list(onlyAudio))
-        # This doesn't need to sort somehow
-        onlyVideo = list(onlyVideo)
+        onlyVideo = list(onlyVideo)     # This doesn't need to sort somehow
 
         self.videoWithAudioListbox.update(videoWithAudio)
         self.onlyVideoListbox.update(onlyVideo)
@@ -62,7 +61,6 @@ class YTDL_Window:
 
 def main():
     window = YTDL_Window()
-
     window.start()
 
 if (__name__ == "__main__"):
