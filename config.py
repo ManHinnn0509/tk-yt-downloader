@@ -1,8 +1,14 @@
+import os
+
 # Window's title
 TITLE = "YouTube Downloader in Tkinter by ManHinnn0509"
 
 # Window Size, WxH
 WINDOW_SIZE = "700x400"
+
+# Downloads' output path
+# Set this to None to make the output path as current working directory
+OUTPUT_PATH = os.path.expanduser('~/Desktop').replace('\\', '/')
 
 # Allow resize or not
 RESIZE_H = False

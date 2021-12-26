@@ -2,6 +2,8 @@ import threading
 
 import tkinter as tk
 
+from config import OUTPUT_PATH
+
 class StreamList:
     def __init__(self, mainWindow, streams, listNameText, buttonText, side) -> None:
         self.mainWindow = mainWindow
@@ -71,7 +73,10 @@ class StreamList:
 
             selectedStream = self.streams[selectedIndex]
             print(f"--- Current download: {self.formattedStreams[selectedIndex]}")
-            selectedStream.download()
+
+            selectedStream.download(
+                output_path=OUTPUT_PATH if (OUTPUT_PATH != None) else "./"
+            )
         
         t = threading.Thread(target=startDownload)
         t.start()
