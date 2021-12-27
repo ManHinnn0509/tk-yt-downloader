@@ -38,6 +38,8 @@ Also, [FFmpeg](https://github.com/FFmpeg/FFmpeg) is needed if for merging video 
 
 ![](./img/example/example_result.png)
 
+![](./img/example/example_result_2.png)
+
 ## Planned
 
 * [ ] Best quality stream download button
