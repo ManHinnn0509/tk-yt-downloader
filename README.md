@@ -56,4 +56,4 @@ Also, [FFmpeg](https://github.com/FFmpeg/FFmpeg) is needed if for merging video 
 ## Disclaimer
 
 This program should only be used on **non-copyrighted** material.
->>>>>>> 8b748b4955b9a6d75f7ac15cf3961297caeac988
+
