@@ -50,8 +50,6 @@ Also, [FFmpeg](https://github.com/FFmpeg/FFmpeg) is needed if for merging video 
 * [x] [Optional output path](https://github.com/ManHinnn0509/tk-yt-downloader/commit/69ecfc142d82d5ada2cc9429a0a1624b992b4ed8)
 * [x] [Maximum title display length](https://github.com/ManHinnn0509/tk-yt-downloader/commit/b9ca71bd3ba68379bfba92f49a93a23b6f8b6605)
 * [x] [Sort streams by it's quality (Highest to lowest)](https://github.com/ManHinnn0509/tk-yt-downloader/commit/b9ca71bd3ba68379bfba92f49a93a23b6f8b6605)
-<<<<<<< HEAD
-=======
 
 ## Disclaimer
 
