@@ -14,7 +14,7 @@ P.S: The GUI may not look good since I don't really have a good art sense. Sorry
 
 ## Merging the download parts (Video & audio)
 
-You can merge them by the following command (simplest way):
+You can merge them by the following command (From [here](https://superuser.com/questions/277642/how-to-merge-audio-and-video-file-in-ffmpeg)):
 
 ```
 ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac output.mp4
@@ -26,7 +26,7 @@ Change `video.mp4`, `audio.wav`, and also `output.mp4` to your file names
 
 See [requirements.txt](./requirements.txt)
 
-Also, [FFmpeg](https://github.com/FFmpeg/FFmpeg) is needed if for merging video & audio parts
+Also, [FFmpeg](https://github.com/FFmpeg/FFmpeg) is needed for merging video & audio parts
 
 ## Demo
 
