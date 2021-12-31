@@ -46,6 +46,7 @@ Also, [FFmpeg](https://github.com/FFmpeg/FFmpeg) is needed for merging video & a
     * [ ] Video
     * [ ] Audio
 * [ ] Merge button (Merge video & audio)
+* [ ] Convert button
 * [ ] Create `.exe` builds
 * [x] [Optional output path](https://github.com/ManHinnn0509/tk-yt-downloader/commit/69ecfc142d82d5ada2cc9429a0a1624b992b4ed8)
 * [x] [Maximum title display length](https://github.com/ManHinnn0509/tk-yt-downloader/commit/b9ca71bd3ba68379bfba92f49a93a23b6f8b6605)
