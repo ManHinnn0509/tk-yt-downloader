@@ -12,7 +12,9 @@ P.S: The GUI may not look good since I don't really have a good art sense. Sorry
 4) Click to select the stream you want to download
 5) Press the "Download" button under the listbox
 
-## Merging the download parts (Video & audio)
+## Merging / Converting
+
+### Merging the download parts (Video & audio)
 
 You can merge them by the following command (From [here](https://superuser.com/questions/277642/how-to-merge-audio-and-video-file-in-ffmpeg)):
 
@@ -21,6 +23,16 @@ ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac output.mp4
 ```
 
 Change `video.mp4`, `audio.wav`, and also `output.mp4` to your file names
+
+### Converting .webm to .mp3
+
+You can convert `.webm` file to `.mp3` file with the following command (Edited from [here](https://stackoverflow.com/questions/44926858/batch-script-to-convert-youtube-dl-webm-file-to-mp3-with-ffmpeg))
+
+```
+ffmpeg -i input.webm -vn -ab 128k -ar 44100 -y output.mp3
+```
+
+Change `input.webm` and `output.mp3` to your file names
 
 ## Requirements
 
