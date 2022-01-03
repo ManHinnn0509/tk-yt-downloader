@@ -131,6 +131,11 @@ def downloadLogging(stream, chunk, bytes_remaining):
     s = f"Downloading ... {percentage:.1f}%"
     print(s)
 
+def downloadComplete(stream, file_path):
+    # Keep this function simple first
+    # This will be updated in the future
+    print("Done!")
+
 def getVideo(url) -> Union[YouTube, str]:
     """
         A YouTube() object will be returned if the video is downloadable
@@ -139,7 +144,7 @@ def getVideo(url) -> Union[YouTube, str]:
     streams = None
 
     try:
-        v = YouTube(url, on_progress_callback=downloadLogging)
+        v = YouTube(url, on_progress_callback=downloadLogging, on_complete_callback=downloadComplete)
         
         # For testing if the video is downloadable
         title = v.title
