@@ -12,6 +12,16 @@ P.S: The GUI may not look good since I don't really have a good art sense. Sorry
 4) Click to select the stream you want to download
 5) Press the "Download" button under the listbox
 
+## Requirements
+
+See [requirements.txt](./requirements.txt)
+
+Also, [FFmpeg](https://github.com/FFmpeg/FFmpeg) is needed for **merging video & audio parts** / **audio download converting**
+
+## Config
+
+There are some options that are configurable, see [config.py](./config.py) for more details
+
 ## Merging / Converting
 
 ### Merging the download parts (Video & audio)
@@ -32,13 +42,13 @@ You can convert `.webm` file to `.mp3` file with the following command (Edited f
 ffmpeg -i input.webm -vn -ab 128k -ar 44100 -y output.mp3
 ```
 
+Or:
+
+```
+ffmpeg -i input.webm -vn output.mp3
+```
+
 Change `input.webm` and `output.mp3` to your file names
-
-## Requirements
-
-See [requirements.txt](./requirements.txt)
-
-Also, [FFmpeg](https://github.com/FFmpeg/FFmpeg) is needed for merging video & audio parts
 
 ## Demo
 
@@ -58,8 +68,8 @@ Also, [FFmpeg](https://github.com/FFmpeg/FFmpeg) is needed for merging video & a
     * [ ] Video
     * [ ] Audio
 * [ ] Merge button (Merge video & audio)
-* [ ] Convert button
 * [ ] Create `.exe` builds
+* [x] ~~Convert button~~ [Convert audio download automatically](https://github.com/ManHinnn0509/tk-yt-downloader/commit/076012497d3bbd206b166bb5dbce3cdcd152921b)
 * [x] [Optional output path](https://github.com/ManHinnn0509/tk-yt-downloader/commit/69ecfc142d82d5ada2cc9429a0a1624b992b4ed8)
 * [x] [Maximum title display length](https://github.com/ManHinnn0509/tk-yt-downloader/commit/b9ca71bd3ba68379bfba92f49a93a23b6f8b6605)
 * [x] [Sort streams by it's quality (Highest to lowest)](https://github.com/ManHinnn0509/tk-yt-downloader/commit/b9ca71bd3ba68379bfba92f49a93a23b6f8b6605)
