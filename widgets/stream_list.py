@@ -1,8 +1,10 @@
+import os
 import threading
+import subprocess
 
 import tkinter as tk
 
-from config import OUTPUT_PATH
+from config import OUTPUT_PATH, DOWNLOAD_AUDIO_AS_MP3, REMOVE_AFTER_CONVERT
 
 class StreamList:
     def __init__(self, mainWindow, streams, listNameText, buttonText="Download", side="left") -> None:
@@ -64,19 +66,45 @@ class StreamList:
         # self.listboxFrame.pack(fill=tk.Y, side=self.side, expand=True)
     
     def downloadSelection(self):
-        def startDownload():
-            try:
-                selectedIndex = self.listbox.curselection()[0]
-            except IndexError:
-                # Maybe the selection is from other listbox
-                return
+        # Check if the selection is valid
+        try:
+            selectedIndex = self.listbox.curselection()[0]
+        except IndexError:
+            # Maybe the selection is from other listbox
+            return
 
+        # Inner function for thread
+        def startDownload():
             selectedStream = self.streams[selectedIndex]
             print(f"--- Current download: {self.formattedStreams[selectedIndex]}")
 
-            selectedStream.download(
+            outputPath = selectedStream.download(
                 output_path=OUTPUT_PATH if (OUTPUT_PATH != None) else "./"
             )
+
+            temp = outputPath.split(".")
+            temp.pop(-1)    # Removes the original extension
+
+            mp3OutputPath = ".".join(temp)
+            mp3OutputPath = f"{mp3OutputPath}.mp3"
+
+            if (DOWNLOAD_AUDIO_AS_MP3):
+                cmdList = [
+                    "ffmpeg", "-i",
+                    outputPath,
+                    "-vn",
+                    mp3OutputPath
+                ]
+
+                try:
+                    subprocess.run(cmdList)
+                    print("[SUCCESS] Convert completed!")
+                
+                    if (REMOVE_AFTER_CONVERT):
+                        os.remove(outputPath)
+                        
+                except:
+                    print("[ERROR] Unable to convert downloaded audio file to .mp3")
         
         t = threading.Thread(target=startDownload)
         t.start()

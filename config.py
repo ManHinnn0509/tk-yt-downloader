@@ -7,8 +7,18 @@ TITLE = "YouTube Downloader in Tkinter by ManHinnn0509"
 WINDOW_SIZE = "700x400"
 
 # Downloads' output path
+# Default: Desktop
 # Set this to None to make the output path as current working directory
 OUTPUT_PATH = os.path.expanduser('~/Desktop').replace('\\', '/')
+
+# Converts the downloaded audio to .mp3 automatically?
+# Default: True
+# FFmpeg is required (If this is True)
+DOWNLOAD_AUDIO_AS_MP3 = True
+
+# Removes the original audio file after converting it to .mp3 file?
+# Default: True
+REMOVE_AFTER_CONVERT = True
 
 # Allow resize or not
 RESIZE_H = False
