@@ -7,7 +7,7 @@ import tkinter as tk
 from config import OUTPUT_PATH, DOWNLOAD_AUDIO_AS_MP3, REMOVE_AFTER_CONVERT
 
 class StreamList:
-    def __init__(self, mainWindow, streams, listNameText, buttonText="Download", side="left") -> None:
+    def __init__(self, mainWindow, streams, listNameText, buttonText="Download", side="left", isAudio=False) -> None:
         self.mainWindow = mainWindow
         self.master = mainWindow.master
 
@@ -17,6 +17,8 @@ class StreamList:
 
         self.streams = streams
         self.formattedStreams = self.__formatStreams()
+
+        self.isAudio = isAudio
 
         # Frame that contains everything
         listboxFrame = tk.Frame(self.master)
@@ -81,6 +83,9 @@ class StreamList:
             outputPath = selectedStream.download(
                 output_path=OUTPUT_PATH if (OUTPUT_PATH != None) else "./"
             )
+
+            if not (self.isAudio):
+                return
 
             temp = outputPath.split(".")
             temp.pop(-1)    # Removes the original extension

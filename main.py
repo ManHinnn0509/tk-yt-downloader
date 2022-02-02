@@ -31,7 +31,7 @@ class YTDL_Window:
         # Listbox(es) for streams
         self.videoWithAudioListbox = StreamList(self, [], "Video with audio")
         self.onlyVideoListbox = StreamList(self, [], "Video only")
-        self.onlyAudioListbox = StreamList(self, [], "Audio only")
+        self.onlyAudioListbox = StreamList(self, [], "Audio only", isAudio=True)
 
     def exec(self, video, streams):
         
