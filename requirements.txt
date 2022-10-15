@@ -1,4 +1,4 @@
-requests==2.25.1
+Pillow==9.2.0
+pytube==12.1.0
 pytube3==9.6.4
-Pillow==8.4.0
-pytube==11.0.2
+requests==2.25.1
