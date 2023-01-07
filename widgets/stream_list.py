@@ -4,6 +4,8 @@ import subprocess
 
 import tkinter as tk
 
+from pytube import Stream
+
 from config import OUTPUT_PATH, DOWNLOAD_AUDIO_AS_MP3, REMOVE_AFTER_CONVERT
 
 class StreamList:
@@ -78,6 +80,8 @@ class StreamList:
         # Inner function for thread
         def startDownload():
             selectedStream = self.streams[selectedIndex]
+            selectedStream: Stream
+            
             print(f"--- Current download: {self.formattedStreams[selectedIndex]}")
 
             outputPath = selectedStream.download(
