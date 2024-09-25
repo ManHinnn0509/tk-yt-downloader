@@ -1,14 +1,19 @@
 """
     Util file extracted from Cyberpsycho.py
     Date: 25/12/2021
+
+    --------------------------------------------------
+
+    Update 2024/09/25:
+    Changed pytube to pytubefix, I know that there are better methods implemented in pytubefix
+    Probably will update the code more in future
 """
 
 import re
 from typing import Union
 
-from pytube import YouTube, Playlist
-from pytube.streams import Stream
-from pytube.exceptions import AgeRestrictedError, RegexMatchError, VideoUnavailable
+from pytubefix import YouTube, Playlist, Stream
+from pytubefix.exceptions import AgeRestrictedError, RegexMatchError, VideoUnavailable
 
 from urllib.error import URLError
 
@@ -144,7 +149,7 @@ def getVideo(url) -> Union[YouTube, str]:
     streams = None
 
     try:
-        v = YouTube(url, on_progress_callback=downloadLogging, on_complete_callback=downloadComplete)
+        v = YouTube(url, 'WEB_CREATOR', on_progress_callback=downloadLogging, on_complete_callback=downloadComplete)
         
         # For testing if the video is downloadable
         title = v.title

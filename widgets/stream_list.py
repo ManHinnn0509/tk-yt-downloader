@@ -4,7 +4,7 @@ import subprocess
 
 import tkinter as tk
 
-from pytube import Stream
+from pytubefix import Stream
 
 from config import OUTPUT_PATH, DOWNLOAD_AUDIO_AS_MP3, REMOVE_AFTER_CONVERT
 
