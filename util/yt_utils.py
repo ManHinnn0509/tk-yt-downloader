@@ -149,7 +149,7 @@ def getVideo(url) -> Union[YouTube, str]:
     streams = None
 
     try:
-        v = YouTube(url, 'ANDROID_VR', on_progress_callback=downloadLogging, on_complete_callback=downloadComplete)
+        v = YouTube(url, client='WEB', on_progress_callback=downloadLogging, on_complete_callback=downloadComplete)
         
         # For testing if the video is downloadable
         title = v.title
